@@ -10,7 +10,7 @@ __in browser javascript console__
 
 ```javascript
 localStorage.username = 'username';
-localStorage.password = 'password'; 
+localStorage.password = 'password';
 ```
 
 ...then refresh page

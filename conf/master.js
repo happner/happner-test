@@ -13,7 +13,6 @@ module.exports = {
 
   datalayer: {
     persist: true,
-    secret: process.env.MESH_SECRET,
     // secure: true,
     // adminPassword: process.env.ADMIN_PASSWORD,
     host: process.env.MASTER_PUBLIC_ADDRESS,
