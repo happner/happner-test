@@ -7,7 +7,7 @@
     "controller": "^0.0.0",
     "dotenv": "^1.2.0",
     "dotenv-safe": "^1.0.2",
-    "happner": "0.0.45-auth"
+    "happner": "git://github.com/happner/happner.git#feature/advanced-security"
   },
   "devDependencies": {},
   "scripts": {
