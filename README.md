@@ -2,8 +2,21 @@
 
 Create test swarm and report.
 
-#### Deploy
+#### Login
 
+[https://test1.happner.net](https://test1.happner.net)
+
+__in browser javascript console__
+
+```javascript
+localStorage.username = 'username';
+localStorage.password = 'password'; 
+```
+
+...then refresh page
+
+
+#### Deploy
 
 __updates to live configs__
 ```
