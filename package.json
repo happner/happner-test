@@ -1,0 +1,23 @@
+{
+  "name": "happner-test",
+  "version": "0.0.0",
+  "description": "Create test swarm and report.",
+  "main": "index.js",
+  "dependencies": {
+    "controller": "^0.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/happner/happner-test.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/happner/happner-test/issues"
+  },
+  "homepage": "https://github.com/happner/happner-test"
+}
