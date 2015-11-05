@@ -1,1 +1,1 @@
-server: bin/server
+marshal: bin/marshal

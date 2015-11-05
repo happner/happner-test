@@ -25,8 +25,8 @@ module.exports = {
     persist: true,
     // secure: true,
     // adminPassword: process.env.ADMIN_PASSWORD,
-    host: process.env.MASTER_PUBLIC_ADDRESS,
-    port: process.env.MASTER_PUBLIC_PORT,
+    host: process.env.WWW_ADDRESS,
+    port: process.env.WWW_PORT,
   },
 
 }

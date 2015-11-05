@@ -19,5 +19,13 @@ module.exports = {
     port: process.env.MASTER_PRIVATE_PORT,
   },
 
-}
+  endpoints: {
+    'marshal': {
+      config: {
+        host: process.env.MARSHAL_PRIVATE_ADDRESS,
+        port: process.env.MARSHAL_PRIVATE_PORT,
+      }
+    }
+  },
 
+}

@@ -1,1 +1,1 @@
-master: bin/master
+gateway: bin/gateway
