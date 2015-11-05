@@ -1,3 +1,20 @@
 #!/usr/bin/env node
 
-require('happner').create(require('../conf/master'));
+var Promise = require('bluebird');
+var Happner = require('happner');
+var www = require('../conf/www');
+var master = require('../conf/master');
+var integration = require('../lib/integration');
+
+Promise.all([
+
+  Happner.create(www),
+  Happner.create(master),
+
+]).spread(integration.run).catch(function(e) {
+
+  console.error(e.stack || e.message);
+  process.exit(1);
+
+})
+

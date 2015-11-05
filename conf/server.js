@@ -9,15 +9,23 @@ try {
 
 module.exports = {
 
-  name: 'master',
+  name: 'server',
+
+  endpoints: {
+    'master': {
+      config: {
+        host: process.env.MASTER_PRIVATE_ADDRESS,
+        port: process.env.MASTER_PRIVATE_PORT,
+      }
+    }
+  },
 
   datalayer: {
     persist: true,
     // secure: true,
     // adminPassword: process.env.ADMIN_PASSWORD,
-    host: process.env.MASTER_PRIVATE_ADDRESS,
-    port: process.env.MASTER_PRIVATE_PORT,
+    host: process.env.SERVER_PRIVATE_ADDRESS,
+    port: process.env.SERVER_PRIVATE_PORT,
   },
 
 }
-

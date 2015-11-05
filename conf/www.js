@@ -9,15 +9,24 @@ try {
 
 module.exports = {
 
-  name: 'master',
+  name: 'www',
+
+  components: {
+    'www': {
+      web: {
+        routes: {
+          static: 'static'
+        }
+      }
+    }
+  },
 
   datalayer: {
     persist: true,
     // secure: true,
     // adminPassword: process.env.ADMIN_PASSWORD,
-    host: process.env.MASTER_PRIVATE_ADDRESS,
-    port: process.env.MASTER_PRIVATE_PORT,
+    host: process.env.MASTER_PUBLIC_ADDRESS,
+    port: process.env.MASTER_PUBLIC_PORT,
   },
 
 }
-
