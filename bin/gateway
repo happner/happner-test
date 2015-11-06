@@ -14,10 +14,6 @@ Promise.all([
   Happner.create(server.secure),
   Happner.create(server.insecure),
 
-]).spread(integration.run).catch(function(e) {
+]).spread(integration.runMaster)
 
-  console.error(e.stack || e.message);
-  process.exit(1);
-
-})
-
+.catch(integration.error);
