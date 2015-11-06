@@ -12,7 +12,10 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "git push test@test1.happner.net:test1.happner.net.git master && git push test@test2.happner.net:test2.happner.net.git master",
+    "config-get": "scp test@test1.happner.net:test1.happner.net.live/.env.test1.happner.net . && scp .env.test2.happner.net test@test2.happner.net:test2.happner.net.live/",
+    "config-put": "scp .env.test1.happner.net test@test1.happner.net:test1.happner.net.live/ && scp .env.test2.happner.net test@test2.happner.net:test2.happner.net.live/"
   },
   "repository": {
     "type": "git",
