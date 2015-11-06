@@ -9,7 +9,23 @@ try {
 
 module.exports = {
 
-  name: 'marshal',
+  // name: 'marshal', // allow random name
+
+  modules: {
+    'controller': {
+      path: 'controller.Marshal'
+    }
+  },
+
+  components: {
+    'controller': {
+      accessLevel: 'mesh',
+
+      // master: 'endpoint/componentName'
+      // (point to remote controller.Server instance)
+      master: 'master/controller'
+    }
+  },
 
   datalayer: {
     persist: true,
@@ -24,6 +40,8 @@ module.exports = {
       config: {
         host: process.env.MASTER_ADDRESS,
         port: process.env.MASTER_PORT,
+        username: '_ADMIN',
+        password: process.env.ADMIN_PASSWORD,
       }
     }
   },

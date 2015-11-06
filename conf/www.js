@@ -13,6 +13,7 @@ module.exports = {
 
   components: {
     'www': {
+      accessLevel: 'mesh',
       web: {
         routes: {
           static: 'static'
@@ -23,8 +24,8 @@ module.exports = {
 
   datalayer: {
     persist: true,
-    // secure: true,
-    // adminPassword: process.env.ADMIN_PASSWORD,
+    secure: true,
+    adminPassword: process.env.ADMIN_PASSWORD,
     host: process.env.WWW_ADDRESS,
     port: process.env.WWW_PORT,
   },

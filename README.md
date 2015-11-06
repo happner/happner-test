@@ -18,7 +18,7 @@ nf start
 
 #### Login
 
-Loval: [https://localhost:50000](http://localhost:50000)<br/>
+Local: [https://localhost:50000](http://localhost:50000)<br/>
 Deployed: [https://test1.happner.net](https://test1.happner.net)<br/>
 
 __in browser javascript console__

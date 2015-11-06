@@ -11,21 +11,33 @@ module.exports = {
 
   name: 'master',
 
+  modules: {
+    'controller': {
+      path: 'controller.Server'
+    }
+  },
+
+  components: {
+    'controller': {
+      accessLevel: 'mesh'
+    }
+  },
+
   datalayer: {
     persist: true,
-    // secure: true,
-    // adminPassword: process.env.ADMIN_PASSWORD,
+    secure: true,
+    adminPassword: process.env.ADMIN_PASSWORD,
     host: process.env.MASTER_ADDRESS,
     port: process.env.MASTER_PORT,
   },
 
   endpoints: {
-    'marshal': {
-      config: {
-        host: process.env.MARSHAL_ADDRESS,
-        port: process.env.MARSHAL_PORT,
-      }
-    }
+    // 'marshal': {
+    //   config: {
+    //     host: process.env.MARSHAL_ADDRESS,
+    //     port: process.env.MARSHAL_PORT,
+    //   }
+    // }
   },
 
 }
