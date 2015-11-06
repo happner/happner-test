@@ -1,0 +1,9 @@
+#!/usr/bin/env node
+
+var integration = require('../lib/integration');
+
+require('happner').create(require('../conf/insecure'))
+
+.then(integration.runInsecure)
+
+.catch(integration.error);

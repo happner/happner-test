@@ -7,7 +7,8 @@ try {
   process.exit(1);
 }
 
-module.exports.secure = {
+module.exports = {
+
   name: 'secure',
 
   datalayer: {
@@ -17,17 +18,5 @@ module.exports.secure = {
     host: process.env.SECURE_ADDRESS,
     port: process.env.SECURE_PORT,
   },
+  
 };
-
-module.exports.insecure = {
-  name: 'insecure',
-
-  datalayer: {
-    persist: true,
-    // secure: true,
-    // adminPassword: process.env.ADMIN_PASSWORD,
-    host: process.env.INSECURE_ADDRESS,
-    port: process.env.INSECURE_PORT,
-  },
-};
-

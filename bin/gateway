@@ -4,16 +4,15 @@ var Promise = require('bluebird');
 var Happner = require('happner');
 var www = require('../conf/www');
 var master = require('../conf/master');
-var server = require('../conf/server');
 var integration = require('../lib/integration');
 
 Promise.all([
 
   Happner.create(www),
   Happner.create(master),
-  Happner.create(server.secure),
-  Happner.create(server.insecure),
 
-]).spread(integration.runMaster)
+])
+
+.spread(integration.runGateway)
 
 .catch(integration.error);

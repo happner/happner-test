@@ -1,1 +1,1 @@
-marshal: bin/marshal
+marshal: bin/marshal --allow-for-long-process-title
