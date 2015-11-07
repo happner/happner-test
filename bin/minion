@@ -4,4 +4,3 @@ var config = JSON.parse(process.argv[2]);
 var id = config.id;
 var endpoint = config.endpoint;
 
-var Happner = require('happner');
