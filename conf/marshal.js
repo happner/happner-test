@@ -29,8 +29,6 @@ module.exports = {
 
   datalayer: {
     persist: true,
-    // secure: true,
-    // adminPassword: process.env.ADMIN_PASSWORD,
     host: process.env.MARSHAL_ADDRESS,
     port: process.env.MARSHAL_PORT,
   },

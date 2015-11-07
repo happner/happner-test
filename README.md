@@ -30,6 +30,14 @@ localStorage.password = 'password';
 
 ...then refresh page
 
+#### Actions
+
+__in browser javascript console__
+
+```
+action('controller.spawnMinions', {count: 1});
+```
+
 
 #### Deploy
 
