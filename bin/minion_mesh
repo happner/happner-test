@@ -2,13 +2,12 @@
 
 var opts = JSON.parse(process.argv[2]);
 
-var id = opts.id;
 var marshal = opts.marshal;
 var config = opts.config.config;
 var endpoint = opts.config.endpoint;
 var script = opts.config.script;
 var name = opts.config.name;
-var user = opts.user || {};
+var user = opts.config.user || {};
 
 var endpointConfig = 
   endpoint == 'insecure' ? {
@@ -20,7 +19,7 @@ var endpointConfig =
     config: {
       host: process.env.SECURE_ADDRESS,
       port: process.env.SECURE_PORT,
-      username: user.name || 'guest',
+      username: user.username || 'guest',
       password: user.password || ''
     }
   } : { // default
@@ -46,7 +45,7 @@ var error = function(e) {
     Object.keys(e).forEach(function(key) {
       ee[key] = e[key];
     });
-    return report.exchange.controller.minionError(id, ee)
+    return report.exchange.controller.minionError(name, ee)
     .then(function() {
       process.exit(1);
     })
@@ -72,7 +71,6 @@ report.login()
 .then(function(mesh) {
   var name = mesh._mesh.config.name;
   return report.exchange.controller.minionReady({
-    id: id,
     name: name,
     timestamp: Date.now()
   })
