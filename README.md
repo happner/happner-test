@@ -10,7 +10,7 @@ Create test swarm and report.
 nf start -j Procfile.test1.happner.net
 nf start -j Procfile.test2.happner.net
 
-# OR
+# OR (all together)
 
 nf start
 ```
