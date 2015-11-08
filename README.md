@@ -43,13 +43,19 @@ action('controller.killMinion', '__name__');
 action('controller.spawnMinions', {count: 1});
 action('controller.spawnMinions', {
     count: 1,
-    // name: 'optional',
-    type: 'mesh', // 'mesh' or 'client' (see bin/minion_*)
-    script: 'name', // runs scripts/mesh_name or scripts/client_name depending on type
-    endpoint: 'secure' // 'secure' or 'insecure'
+    // name: 'optional', // WARNING: does not protect against name duplicates
+
+    type: 'mesh',    // 'mesh' or 'client' (see bin/minion_*)
+    script: 'name', // runs scripts/mesh_{name} or scripts/client_{name} 
+                   // depending on type
+
+    endpoint: 'secure', // connect to 'bin/secure' or 'bin/insecure'
+    // user: { // if endpoint: 'secure'
+    //   username: 'guest',
+    //   password: '',
+    // },
 });
 ```
-
 
 #### Deploy
 
