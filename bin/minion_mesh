@@ -13,19 +13,19 @@ var endpointConfig =
   endpoint == 'insecure' ? {
     config: {
       host: process.env.INSECURE_ADDRESS,
-      port: process.env.INSECURE_PORT,
+      port: parseInt(process.env.INSECURE_PORT),
     }
   } : endpoint == 'secure' ? {
     config: {
       host: process.env.SECURE_ADDRESS,
-      port: process.env.SECURE_PORT,
+      port: parseInt(process.env.SECURE_PORT),
       username: user.username || 'guest',
       password: user.password || ''
     }
   } : { // default
     config: {
       host: process.env.INSECURE_ADDRESS,
-      port: process.env.INSECURE_PORT, 
+      port: parseInt(process.env.INSECURE_PORT), 
     }
   };
 
