@@ -1,0 +1,45 @@
+#!/usr/bin/env node
+
+var opts = JSON.parse(process.argv[2]);
+
+var name = opts.name;
+var marshal = opts.marshal;
+// var configName = opts.config.configName || 'default';
+// var endpointName = opts.config.endpointName;
+var user = opts.user || {};
+
+// var endpoint = 
+//   endpointName == 'insecure' ? {
+//     config: {
+//       host: process.env.INSECURE_ADDRESS,
+//       port: process.env.INSECURE_PORT,
+//     }
+//   } : endpointName == 'secure' ? {
+//     config: {
+//       host: process.env.SECURE_ADDRESS,
+//       port: process.env.SECURE_PORT,
+//       username: user.name || 'guest',
+//       password: user.password || ''
+//     }
+//   } : { // default
+//     config: {
+//       host: process.env.INSECURE_ADDRESS,
+//       port: process.env.INSECURE_PORT, 
+//     }
+//   };
+
+// endpoint.name = endpointName;
+
+// var config = require('../configs/minion_' + configName).createConfig(name, endpoint);
+
+// var Happner = require('happner');
+
+// var error = function(e) {
+//   // TODO: tell marshal...
+//   console.error(e);
+//   process.exit(1);
+// }
+
+// var run = function(mesh) {}
+
+// Happner.create(config).then(run).catch(error);

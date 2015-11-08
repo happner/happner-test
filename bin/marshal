@@ -2,7 +2,7 @@
 
 var integration = require('../lib/integration');
 
-require('happner').create(require('../conf/marshal'))
+require('happner').create(require('../configs/marshal'))
 
 .then(integration.runMarshal)
 

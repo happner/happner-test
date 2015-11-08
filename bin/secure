@@ -2,7 +2,7 @@
 
 var integration = require('../lib/integration');
 
-require('happner').create(require('../conf/secure'))
+require('happner').create(require('../configs/secure'))
 
 .then(integration.runSecure)
 

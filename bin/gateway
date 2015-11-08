@@ -2,8 +2,8 @@
 
 var Promise = require('bluebird');
 var Happner = require('happner');
-var www = require('../conf/www');
-var master = require('../conf/master');
+var www = require('../configs/www');
+var master = require('../configs/master');
 var integration = require('../lib/integration');
 
 Promise.all([
