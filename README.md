@@ -34,15 +34,23 @@ localStorage.password = 'password';
 
 __in browser javascript console__
 
-```
-// stop minions
+##### stop minions
+
+```javascript
 action('controller.killMinions');
 action('controller.killMinion', '__name__');
+```
 
-// start minions (spread across available marshals)
-action('controller.spawnMinions', {count: 1});
 
-// spawn 10 minions as mesh nodes (full config complement)
+##### start minions (spreads across all available marshals)
+
+```javascript
+action('controller.spawnMinions', {count: 10});
+```
+
+##### start minions as mesh nodes (full config complement)
+
+```javascript
 var spawnMeshes = {
   count: 10,
   type: 'mesh',
@@ -56,8 +64,11 @@ var spawnMeshes = {
 }
 
 action('controller.spawnMinions', spawnMeshes);
+```
 
-// spawn 10 minions as mesh clients (full config complement)
+##### start minions as mesh clients (full config complement)
+
+```javascript
 var spawnAsClients = {
   count: 10,
   type: 'client',
@@ -66,7 +77,6 @@ var spawnAsClients = {
 }
 
 action('controller.spawnMinions', spawnAsClients);
-
 ```
 
 #### Deploy
