@@ -60,7 +60,9 @@ var spawnMeshes = {
   user: {
     username: 'guest',
     password: '',
-  }
+  },
+  // stderr: true, // outstreams from minion(s) output on mashal's console/log
+  // stdout: true, // ssh test@test2.happner.net tail -f /var/log/test2.happner.net/marshal-1.log
 }
 
 action('controller.spawnMinions', spawnMeshes);
@@ -92,4 +94,24 @@ rm .env.test1.*
 __deploy__
 ```
 npm run-script deploy
+```
+
+
+__manage__
+```
+# start|stop|restart
+
+ssh test@test2.happner.net sudo restart test2.happner.net
+ssh test@test2.happner.net sudo restart test2.happner.net
+
+# logs
+
+ssh test@test1.happner.net tail -f /var/log/test1.happner.net/*
+ssh test@test2.happner.net tail -f /var/log/test2.happner.net/*
+
+# homes
+
+test@test1.happner.net:test1.happner.net.live/
+test@test2.happner.net:test2.happner.net.live/
+
 ```
