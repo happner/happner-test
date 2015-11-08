@@ -4,5 +4,67 @@ var opts = JSON.parse(process.argv[2]);
 
 var id = opts.id;
 var marshal = opts.marshal;
+var script = opts.config.script;
 var user = opts.user || {};
 
+
+var Happner = require('happner');
+
+var error = function(e) {
+  if (report && report.exchange) {
+    var ee = {};
+    ee.name = e.name;
+    ee.message = e.message;
+    Object.keys(e).forEach(function(key) {
+      ee[key] = e[key];
+    });
+    return report.exchange.controller.minionError(id, ee)
+    .then(function() {
+      process.exit(1);
+    })
+    .catch(function() {
+      console.error(e);
+      process.exit(1);
+    })
+
+  }
+  process.exit(1);
+}
+
+// Reports back to marshal.
+var report = new Happner.MeshClient({
+  host: marshal.datalayer.address.address,
+  port: marshal.datalayer.address.port,
+});
+
+var client = new Happner.MeshClient({
+  host: marshal.datalayer.address.address,
+  port: marshal.datalayer.address.port,
+});
+
+report.login()
+
+.then(function() {
+  return client.login(user)
+})
+
+.then(function() {
+  var name = id;
+  return report.exchange.controller.minionReady({
+    id: id,
+    name: name,
+    timestamp: Date.now()
+  })
+  .then(function() {
+
+    var run = require('../scripts/client_' + script);
+
+    // Call specified script with:
+    // name (of minion),
+    // report (meshclient connected to marshal),
+    // client (meshclient connected to bin/secure or bin/insecure),
+    return run.start(name, report, client);
+
+  })
+})
+.catch(error);

@@ -8,20 +8,15 @@ var ErrorExit = require('../lib/error_exit');
  * @api public
  * @param {String} name
  * @param {MeshClient} report
- * @param {Mesh} mesh
+ * @param {MeshClient} client
  *
  */
 
-module.exports.start = function(name, report, mesh) {
-
+module.exports.start = function(name, report, client) {
 
   repeat(10, function() {
 
-    // repeat 10 times, one at a time
-
-    // NB: will only do one at a time if a promise is returned
-
-    return mesh.exchange.default.test({a: 1});
+    // return promise
 
   })
 
@@ -36,26 +31,7 @@ module.exports.start = function(name, report, mesh) {
 
   .then(function() {
 
-    // must return, it's the promise that pends the next '.then'
-
-    return repeat(10, function() {
-
-      // repeat 10 times, one at a time
-
-      return mesh.exchange.default.test({a: 2});
-
-    })
-
-  })
-
-  .then(function() {
-
-    newstat = {};
-    return report.exchange.controller.minionUpdate(name, newstat)
-
-  })
-
-  .then(function() {
+    // return repeat(/*....*/)
 
     // Report done, with final result
 
@@ -70,8 +46,6 @@ module.exports.start = function(name, report, mesh) {
 
   })
 
-  // Catch and report error and exit
-
   .catch(ErrorExit(name, report))
 
-};
+}

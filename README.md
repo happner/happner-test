@@ -35,11 +35,19 @@ localStorage.password = 'password';
 __in browser javascript console__
 
 ```
-action('controller.spawnMinions', {count: 1});
-
+// stop minions
 action('controller.killMinions');
-
 action('controller.killMinion', '__name__');
+
+// start minions (spread across available marshals)
+action('controller.spawnMinions', {count: 1});
+action('controller.spawnMinions', {
+    count: 1,
+    // name: 'optional',
+    type: 'mesh', // 'mesh' or 'client' (see bin/minion_*)
+    script: 'name', // runs scripts/mesh_name or scripts/client_name depending on type
+    endpoint: 'secure' // 'secure' or 'insecure'
+});
 ```
 
 
