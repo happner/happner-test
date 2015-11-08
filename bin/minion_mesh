@@ -78,7 +78,13 @@ report.login()
   })
   .then(function() {
     var run = require('../scripts/mesh_' + script);
+
+    // Call specified script with:
+    // name (of minion),
+    // report (meshclient connected to marshal),
+    // mesh (the spawned mesh),
     return run.start(name, report, mesh);
+
   })
 })
 .catch(error);

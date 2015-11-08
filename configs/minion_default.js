@@ -14,12 +14,20 @@ module.exports.createConfig = function(name, endpointConfig, user) {
   }
   
   return {
+
     name: name,
+
     datalayer: {
       host: '127.0.0.1',
       port: 0,
     },
+
     endpoints: endpoints,
+
+    components: {
+      'default': {}
+    }
+    
   }
 
 }
