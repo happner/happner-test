@@ -46,6 +46,6 @@ module.exports.start = function(name, report, client) {
 
   })
 
-  .catch(ErrorExit(name, report))
+  .catch(ErrorExit(name, report));
 
 }

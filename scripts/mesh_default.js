@@ -72,6 +72,6 @@ module.exports.start = function(name, report, mesh) {
 
   // Catch and report error and exit
 
-  .catch(ErrorExit(name, report))
+  .catch(ErrorExit(name, report));
 
 };

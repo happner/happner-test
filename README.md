@@ -41,20 +41,32 @@ action('controller.killMinion', '__name__');
 
 // start minions (spread across available marshals)
 action('controller.spawnMinions', {count: 1});
-action('controller.spawnMinions', {
-    count: 1,
-    // name: 'optional', // WARNING: does not protect against name duplicates
 
-    type: 'mesh',    // 'mesh' or 'client' (see bin/minion_*)
-    script: 'name', // runs scripts/mesh_{name} or scripts/client_{name} 
-                   // depending on type
+// spawn 10 minions as mesh nodes (full config complement)
+var spawnMeshes = {
+  count: 10,
+  type: 'mesh',
+  endpoint: 'secure'  // connects to 'bin/secure' or 'bin/insecure'
+  config: 'default',  // see configs/minion_{name}.js
+  script: 'default',  // see scripts/mesh_{name}.js
+  user: {
+    username: 'guest',
+    password: '',
+  }
+}
 
-    endpoint: 'secure', // connect to 'bin/secure' or 'bin/insecure'
-    // user: { // if endpoint: 'secure'
-    //   username: 'guest',
-    //   password: '',
-    // },
-});
+action('controller.spawnMinions', spawnMeshes);
+
+// spawn 10 minions as mesh clients (full config complement)
+var spawnAsClients = {
+  count: 10,
+  type: 'client',
+  endpoint: 'insecure', // connects to 'bin/secure' or 'bin/insecure'
+  script: 'default'     // see scripts/client_{name}.js
+}
+
+action('controller.spawnMinions', spawnAsClients);
+
 ```
 
 #### Deploy
