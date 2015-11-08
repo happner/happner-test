@@ -1,6 +1,12 @@
 #!/usr/bin/env node
 
-var config = JSON.parse(process.argv[2]);
-var id = config.id;
-var endpoint = config.endpoint;
+var opts = JSON.parse(process.argv[2]);
+var id = opts.id;
+var marshal = opts.marshal;
+var config = opts.config;
 
+console.log(id, marshal, config);
+
+setTimeout(function() {
+  console.log('exit');
+}, 50000);

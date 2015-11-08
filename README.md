@@ -36,6 +36,10 @@ __in browser javascript console__
 
 ```
 action('controller.spawnMinions', {count: 1});
+
+action('controller.killMinions');
+
+action('controller.killMinion', '__name__');
 ```
 
 
