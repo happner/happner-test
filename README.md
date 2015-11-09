@@ -42,17 +42,16 @@ action('controller.killMinion', '__name__');
 ```
 
 
-##### start minions (spreads across all available marshals)
+##### start minions (spread across all available marshals)
 
 ```javascript
-action('controller.spawnMinions', {count: 10});
+action('controller.spawnMinions', 10);
 ```
 
 ##### start minions as mesh nodes (full config complement)
 
 ```javascript
-var spawnMeshes = {
-  count: 10,
+var spawnMesh = {
   type: 'mesh',
   endpoint: 'secure'  // connects to 'bin/secure' or 'bin/insecure'
   config: 'default',  // see configs/minion_{name}.js
@@ -65,20 +64,19 @@ var spawnMeshes = {
   // stdout: true, // ssh test@test2.happner.net tail -f /var/log/test2.happner.net/marshal-1.log
 }
 
-action('controller.spawnMinions', spawnMeshes);
+action('controller.spawnMinions', 10, spawnMesh);
 ```
 
 ##### start minions as mesh clients (full config complement)
 
 ```javascript
 var spawnAsClients = {
-  count: 10,
   type: 'client',
   endpoint: 'insecure', // connects to 'bin/secure' or 'bin/insecure'
   script: 'default'     // see scripts/client_{name}.js
 }
 
-action('controller.spawnMinions', spawnAsClients);
+action('controller.spawnMinions', 10, spawnAsClient);
 ```
 
 #### Deploy

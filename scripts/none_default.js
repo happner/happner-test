@@ -8,49 +8,35 @@ var ErrorExit = require('../lib/error_exit');
  * @api public
  * @param {String} name
  * @param {MeshClient} report
- * @param {MeshClient} client
+ * @param {null} client
+ * @param {Object} opts
  *
  * #### call from browser console
  *
- * To run this script on client minion connecting to secure/insecure mesh.
+ * To run this script on none minion connecting to secure/insecure mesh.
  *
- * > action('controller.spawnMinions', 1, {type: 'client', script: 'default', endpoint: 'insecure'});
- * > action('controller.spawnMinions', 1, {type: 'client', script: 'default', endpoint: 'secure', user: {username: '', password: ''} });
+ * > action('controller.spawnMinions', 1, {type: 'none', script: 'default', endpoint: 'insecure'});
+ * > action('controller.spawnMinions', 1, {type: 'none', script: 'default', endpoint: 'secure', user: {username: '', password: ''} });
  *
  */
-
-module.exports.start = function(name, report, client) {
+module.exports.start = function(name, report, client, opts) {
 
   repeat(10, function() {
-
     // return promise
-
   })
 
   .then(function() {
-
-    // report to marshal
-
     stat = {};
     return report.exchange.controller.minionUpdate(name, stat)
-
   })
 
   .then(function() {
-
-    // return repeat(/*....*/)
-
-    // Report done, with final result
-
     var doneResult = {};
     return report.exchange.controller.minionDone(name, doneResult);
-
   })
 
   .then(function() {
-
     process.exit(0);
-
   })
 
   .catch(ErrorExit(name, report));

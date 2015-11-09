@@ -1,5 +1,20 @@
 #!/usr/bin/env node
 
+/*
+ * ### Run minion with mesh node connected uptree.
+ * 
+ * var report - MeshClient connected to the marshal that spawned this
+ *              for reporting. (see scripts/mesh_default)
+ *
+ * mesh       - Mesh connected uptree to either 'secure' or 'insecure'
+ *              mesh nodes. (the test target)
+ *
+ * #### call from browser console
+ * 
+ * > action('controller.spawnMinions', 1, {type: 'mesh'}); //, script: 'default', endpoint: 'insecure'});
+ *
+ */
+
 var opts = JSON.parse(process.argv[2]);
 
 var marshal = opts.marshal;
