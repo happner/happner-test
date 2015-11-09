@@ -32,12 +32,21 @@ module.exports = {
   },
 
   endpoints: {
-    // 'marshal': {
-    //   config: {
-    //     host: process.env.MARSHAL_ADDRESS,
-    //     port: process.env.MARSHAL_PORT,
-    //   }
-    // }
+    'secure': {
+      config: {
+        host: process.env.SECURE_ADDRESS,
+        port: process.env.SECURE_PORT,
+        username: '_ADMIN',
+        password: process.env.ADMIN_PASSWORD,
+      }
+    },
+
+    'insecure': {
+      config: {
+        host: process.env.INSECURE_ADDRESS,
+        port: process.env.INSECURE_PORT,
+      }
+    }
   },
 
 }

@@ -11,6 +11,18 @@ module.exports = {
 
   name: 'insecure',
 
+  modules: {
+    'controller': {
+      path: 'controller.Target'
+    }
+  },
+
+  components: {
+    'controller': {
+      accessLevel: 'mesh',
+    }
+  },
+
   datalayer: {
     persist: true,
     // secure: true,
