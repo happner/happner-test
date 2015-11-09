@@ -66,7 +66,7 @@ module.exports.start = function(scriptName, $happn, opts) {
 
 
 
-  // QUICK HACK: pretend that script takes 4 seconds
+  // QUICK HACK: pretend that script takes 10 seconds
 
   setTimeout(function() {stop = true}, 10000);
 
