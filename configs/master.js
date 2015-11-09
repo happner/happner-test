@@ -13,7 +13,7 @@ module.exports = {
 
   modules: {
     'controller': {
-      path: 'controller.Server'
+      path: 'controller.Master'
     }
   },
 
