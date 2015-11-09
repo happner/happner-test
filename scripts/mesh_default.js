@@ -12,10 +12,11 @@ var ErrorExit = require('../lib/error_exit');
  *
  * #### call from browser console
  *
- * To run this script on minion connecting to secure/insecure mesh.
+ * To run this script on mesh minion connecting to secure/insecure mesh.
  *
  * > action('controller.spawnMinions', 1, {type: 'mesh', script: 'default', endpoint: 'insecure'});
  * > action('controller.spawnMinions', 1, {type: 'mesh', script: 'default', endpoint: 'secure', user: {username: '', password: ''} });
+ *
  */
 
 module.exports.start = function(name, report, mesh) {

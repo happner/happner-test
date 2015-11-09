@@ -25,7 +25,9 @@ __mesh__ - minion has a `Mesh` connected uptree<br/>
 __client__ - minion has a `MeshClient` connected uptree<br/>
 __none__ - minion has neither of the above<br/>
 
-See [Actions](#actions) below for how to start specified minions/scripts.<br>
+Note: Minions of type __mesh__ start their `Mesh` with a specifiable config from `configs/minion_{name}.js`
+
+See [Actions](#actions) below for how to start specified minions/configs/scripts.<br>
 See `scripts/*`.
 
 
@@ -111,7 +113,7 @@ __in browser javascript console__
 ##### start a master script
 
 ```javascript
-action('controller.runScript', 'example', {param1: 1});
+action('controller.runScript', 'example', {opts: 1});
 ```
 
 

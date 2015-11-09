@@ -4,8 +4,12 @@
  *
  * @api public
  * @param {String} scriptName
- * @param {ComponentInstance} $happn
+ * @param {ComponentInstance} $happn master/controller
  * @param {Object} opts
+ *
+ * #### call from browser console
+ *
+ * > action('controller.runScript', 'example', {opts: 1});
  *
  */
 
