@@ -21,8 +21,8 @@ Minions (of type) run scripts (by name) from `scripts/{type}_{name}.js`.
 
 ##### Types of minion.
 
-__mesh__ - minion is has a `Mesh` connected uptree<br/>
-__client__ - minion is has a `MeshClient` connected uptree<br/>
+__mesh__ - minion has a `Mesh` connected uptree<br/>
+__client__ - minion has a `MeshClient` connected uptree<br/>
 __none__ - minion has neither of the above<br/>
 
 See [Actions](#actions) below for how to start specified minions/scripts.<br>
@@ -33,7 +33,7 @@ See `scripts/*`.
 
 The master can run scripts that configure a situation and spawn minion/scripts into it.
 
-See [Actions on Master](#actions-on-master)
+See [Actions on Master](#actions-on-master)<br/>
 See `scripts/master_*.js`
 
 
@@ -135,7 +135,7 @@ __manage__
 ```
 # start|stop|restart
 
-ssh test@test2.happner.net sudo restart test2.happner.net
+ssh test@test1.happner.net sudo restart test1.happner.net
 ssh test@test2.happner.net sudo restart test2.happner.net
 
 # logs
