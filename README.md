@@ -28,7 +28,7 @@ __none__ - minion has neither of the above<br/>
 Note: Minions of type __mesh__ start their `Mesh` with a named config from `configs/minion_{name}.js`
 
 See [Actions](#actions) below for how to start specified minions/configs/scripts.<br>
-See `scripts/*`.
+See `scripts/*`, `configs/minion_*.js`
 
 
 #### Master Scripts
