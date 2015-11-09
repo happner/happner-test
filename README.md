@@ -15,6 +15,27 @@ nf start -j Procfile.test2.happner.net
 nf start
 ```
 
+#### Minion Scripts
+
+Minions (of type) run scripts (by name) from `scripts/{type}_{name}.js`.
+
+##### Types of minion.
+
+__mesh__ - minion is has a `Mesh` connected uptree<br/>
+__client__ - minion is has a `MeshClient` connected uptree<br/>
+__none__ - minion has neither of the above<br/>
+
+See [Actions](#actions) below for how to start specified minions/scripts.<br>
+See `scripts/*`.
+
+
+#### Master Scripts
+
+The master can run scripts that configure a situation and spawn minion/scripts into it.
+
+See [Actions on Master](#actions-on-master)
+See `scripts/master_*.js`
+
 
 #### Login
 
@@ -31,6 +52,8 @@ localStorage.password = 'password';
 ...then refresh page
 
 #### Actions
+
+(control from browser)
 
 __in browser javascript console__
 
@@ -78,6 +101,19 @@ var spawnAsClients = {
 
 action('controller.spawnMinions', 10, spawnAsClient);
 ```
+
+#### Actions on Master
+
+(control from browser)
+
+__in browser javascript console__
+
+##### start a master script
+
+```javascript
+action('controller.runScript', 'example', {param1: 1});
+```
+
 
 #### Deploy
 
