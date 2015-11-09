@@ -53,6 +53,8 @@ module.exports.start = function(scriptName, $happn, opts) {
     ])
 
     .spread(function(secureStats, insecureStats) {
+
+      // ssh test@test1.happner.net tail -f /var/log/test1.happner.net/gateway-1.log
       console.log('STATS from %s', 'secure', secureStats);
       console.log('STATS from %s', 'insecure', insecureStats);
     })
@@ -91,6 +93,18 @@ module.exports.start = function(scriptName, $happn, opts) {
     config: 'default'
 
   }).then(function(){}).catch(function(){})
+
+
+
+
+  /**
+   * 
+   * 3. Finished
+   *    --------
+   *
+   *    todo
+   *
+   */
 
 }
 
