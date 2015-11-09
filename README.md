@@ -25,7 +25,7 @@ __mesh__ - minion has a `Mesh` connected uptree<br/>
 __client__ - minion has a `MeshClient` connected uptree<br/>
 __none__ - minion has neither of the above<br/>
 
-Note: Minions of type __mesh__ start their `Mesh` with a specifiable config from `configs/minion_{name}.js`
+Note: Minions of type __mesh__ start their `Mesh` with a named config from `configs/minion_{name}.js`
 
 See [Actions](#actions) below for how to start specified minions/configs/scripts.<br>
 See `scripts/*`.
