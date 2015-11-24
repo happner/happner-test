@@ -8,7 +8,7 @@
     "controller": "^0.0.0",
     "dotenv": "^1.2.0",
     "dotenv-safe": "^1.0.2",
-    "happner": "happner/happner.git#feature/1.0/prerelease"
+    "happner": "happner/happner.git#1.0/prerelease"
   },
   "devDependencies": {},
   "scripts": {
